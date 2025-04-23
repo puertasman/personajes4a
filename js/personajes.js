@@ -29,4 +29,5 @@ export const personajesAnimados = [
     { nombre: "Truffles", edad: 16, lateralidad: "diestro", serie: "Happy Tree Friends", descripcion: "Cerdo azul que aparece ocasionalmente en la serie." },
     { nombre: "Enrique", edad: 8, lateralidad: "diestro", serie: "Dragon Tales", descripcion: "Nuevo vecino y amigo de Max y Emmy, originario de Colombia." },
     { nombre: "Iroh", edad: 60, lateralidad: "diestro", serie: "Avatar: la leyenda de Aang", descripcion: "General retirado y tío de Zuko, conocido por su sabiduría." },
+    { nombre: "Crusanito", edad: 6, lateralidad: "zurdo", descripcion: "Cusán muy dulce", serie: "Ninguna serie" },
 ]  

@@ -22,17 +22,17 @@ function mostrarPersonajes(personajesAnimados){
         thead.innerHTML = `
             <tr>
                 <th>Nombre</th>
-                <th>Serie </th>
+                <th>Serie<br>
+        <select id="filtroSerie">
+            <option value="">Todas las series</option>
+        </select></th>
+                <th>Edad</th>
+                <th>Lateralidad</th>
+                <th>Descripción</th>
             </tr>
         `
         personajes.append(thead)
 
-        /* Primero añadir esto en serie
-        <br>
-        <select id="filtroSerie">
-            <option value="">Todas las series</option>
-        </select>
-        
         const selectSerie = thead.querySelector('#filtroSerie');
         const seriesUnicas = new Set(personajesAnimados.map(p => p.serie));
         seriesUnicas.forEach(serie => {
@@ -41,7 +41,6 @@ function mostrarPersonajes(personajesAnimados){
             option.textContent = serie;
             selectSerie.appendChild(option);
         });
-        */
 
         const tbody = document.createElement('tbody');
         personajesAnimados.forEach(personaje => {
@@ -49,6 +48,9 @@ function mostrarPersonajes(personajesAnimados){
             tr.innerHTML = `
                 <td>${personaje.nombre}</td>
                 <td>${personaje.serie}</td>
+                <td>${personaje.edad}</td>
+                <td>${personaje.lateralidad}</td>
+                <td>${personaje.descripcion}</td>
             `
             tbody.append(tr)
         })
@@ -58,7 +60,7 @@ function mostrarPersonajes(personajesAnimados){
             const serieSeleccionada = e.target.value;
             const filas = tbody.querySelectorAll('tr');
             filas.forEach(fila => {
-                const celdaSerie = fila.cells[3].textContent;
+                const celdaSerie = fila.cells[1].textContent;
                 if (serieSeleccionada === '' || celdaSerie === serieSeleccionada) {
                     fila.style.display = '';
                 } else {
